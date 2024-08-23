@@ -1,0 +1,46 @@
+package br.com.banco.conta;
+
+public class Conta {
+//atributos(caracteristicas)
+
+    private String nome;
+    private int numero;
+    private double saldo;
+// inicializar os atributorsda classe
+    public Conta(String nome, int numero, double saldo) {
+        this.nome = nome;
+        this.numero = numero;
+        this.saldo = saldo;
+    }
+
+//metodos(acoes)
+
+    public double saldo(){
+        return saldo;
+    }
+
+    public double sacar(double valorSaque){
+
+        if(saldo >= valorSaque){
+            return saldo -= valorSaque;
+
+        }
+
+        System.out.println("saldo insuficiente, deseja fazer um emprestimo");
+        return saldo;
+
+    }
+
+    public double depositar(double valorDeposito){
+        return saldo += valorDeposito;
+    }
+
+    @Override
+    public String toString() {
+        return "Conta{" +
+                "nome='" + nome + '\'' +
+                ", numero=" + numero +
+                ", saldo=" + saldo +
+                '}';
+    }
+}
